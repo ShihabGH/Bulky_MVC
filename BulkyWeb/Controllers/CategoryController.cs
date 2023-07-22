@@ -76,7 +76,7 @@ namespace BulkyWeb.Controllers
             {
                 return NotFound();
             }
-            return View();
+            return View(categoryFromDb);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
@@ -90,7 +90,6 @@ namespace BulkyWeb.Controllers
             _db.SaveChanges();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
-
         }
     }
 }
